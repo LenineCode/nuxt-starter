@@ -29,9 +29,19 @@ $ client/ npm i
 ## start
 
 ### npm
-```bash 
-$ client/ npm run dev  
+
+```bash
+# start for developper
+$ client/ npm run dev
+
+# build for production and launch server
+$ client/ npm run build
+$ client/ npm run start
+
+# generate static project
+$ client/ npm run generate
 ```
+
 ## docker
 
 ```bash
