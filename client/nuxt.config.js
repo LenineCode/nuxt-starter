@@ -42,6 +42,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-i18n'
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -60,6 +61,34 @@ export default {
           success: colors.green.accent3
         }
       }
+    }
+  },
+
+  i18n: {
+    locales: [
+      {
+        name: 'Français',
+        code: 'fr',
+        iso: 'fr-FR',
+        file: 'fr.json'
+      },
+      {
+        name: 'English',
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.json'
+      }
+    ],
+    baseUrl: '/',
+    defaultLocale: 'fr',
+    lazy: true,
+    langDir: 'locales/',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'nuxt-starter_i18n',
+      alwaysRedirect: true,
+      fallbackLocale: 'en'
     }
   },
 

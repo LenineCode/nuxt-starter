@@ -1,0 +1,28 @@
+{
+  "ui": {
+    "header": {
+      "tittle": "English"
+    },
+    "drawer": {
+      "home": "Home",
+      "examples": "Examples",
+      "steps": "Steps"
+    },
+    "pages": {
+      "home": {
+        "content": "A warm welcome"
+      },
+      "examples": {
+        "content": "A page with examples"
+      },
+      "steps": {
+        "content": "A page with steps"
+      }
+    },
+    "theme": {
+      "dark": "Dark theme",
+      "light": "Light theme"
+    },
+    "language": "Language"
+  }
+}

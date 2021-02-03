@@ -19,14 +19,14 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Home</v-list-item-title>
+          <v-list-item-title> {{ $t("ui.drawer.home") }} </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
       <v-list-item
         link
         router
-        :to="{ path: '/enrich/staline' }"
+        :to="{ path: '/examples' }"
         ripple
       >
         <v-list-item-icon>
@@ -34,14 +34,14 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Staline</v-list-item-title>
+          <v-list-item-title>{{ $t("ui.drawer.examples") }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
       <v-list-item
         link
         router
-        :to="{ path: '/enrich/lenine' }"
+        :to="{ path: '/steps' }"
         ripple
       >
         <v-list-item-icon>
@@ -49,10 +49,31 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Lenine</v-list-item-title>
+          <v-list-item-title>{{ $t("ui.drawer.steps") }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
+
+    <v-list-group
+      no-action
+      append-icon="mdi-chevron-down"
+      prepend-icon="mdi-translate"
+    >
+      <template #activator>
+        <v-list-item-title class="body-2" v-text="$t('ui.language')" />
+      </template>
+
+      <v-list-item
+        v-for="locale in $i18n.locales"
+        :key="locale.code"
+        @click="$i18n.setLocale(locale.code)"
+      >
+        <v-list-item-title class="body-2" v-text="locale.name" />
+        <v-list-item-icon>
+          <img width="24" :src="require(`@/static/img/${locale.code}.png`)">
+        </v-list-item-icon>
+      </v-list-item>
+    </v-list-group>
 
     <template #append>
       <div class="pa-2 text-center">
@@ -73,8 +94,8 @@
               </v-icon>
             </v-btn>
           </template>
-          <span v-if="$vuetify.theme.dark">Thème clair</span>
-          <span v-else>Thème sombre</span>
+          <span v-if="$vuetify.theme.dark">{{ $t("ui.theme.dark") }}</span>
+          <span v-else>{{ $t("ui.theme.light") }}</span>
         </v-tooltip>
 
         <v-spacer />
@@ -87,7 +108,7 @@
           rel="noreferrer"
           outlined
         >
-          Version: {{ appVersion }}
+          Version: {{ appInfos.version }}
           <v-icon right>
             mdi-github
           </v-icon>
@@ -103,6 +124,12 @@ export default {
   data () {
     return {
       drawer: null
+    }
+  },
+
+  computed: {
+    appInfos () {
+      return this.$store.state.appInfos
     }
   }
 }

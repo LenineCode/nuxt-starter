@@ -1,0 +1,28 @@
+{
+  "ui": {
+    "header": {
+      "tittle": "Français"
+    },
+    "drawer": {
+      "home": "Accueil",
+      "examples": "Exemples",
+      "steps": "Etapes"
+    },
+    "pages": {
+      "home": {
+        "content": "Un accueil chaleureux"
+      },
+      "examples": {
+        "content": "Une page avec des examples"
+      },
+      "steps": {
+        "content": "Une page avec des étapes"
+      }
+    },
+    "theme": {
+      "dark": "Thème claire",
+      "light": "Thème sombre"
+    },
+    "language": "Language"
+  }
+}

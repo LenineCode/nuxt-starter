@@ -1,13 +1,12 @@
 <template>
   <div>
-    Ici tu donnes tes données à Lenine
-    <v-file-input accept=".csv" label="File input" />
+    {{ $t("ui.pages.steps.content") }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Lenine',
+  name: 'steps',
   transition: 'slide-x-transition'
 }
 </script>

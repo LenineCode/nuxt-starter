@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <v-card>
-      {{ $t("ui.pages.home.content") }}
-    </v-card>
+  <div id="examples">
+    {{ $t("ui.pages.examples.content") }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Example',
   transition: 'slide-x-transition'
 }
 </script>
