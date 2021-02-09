@@ -123,13 +123,16 @@ export default {
   name: 'Drawer',
   data () {
     return {
-      drawer: null
     }
   },
 
   computed: {
     appInfos () {
       return this.$store.state.appInfos
+    },
+    drawer: {
+      get () { return this.$store.state.drawer },
+      set (newVal) { this.$store.dispatch('SET_DRAWER', newVal) }
     }
   }
 }
