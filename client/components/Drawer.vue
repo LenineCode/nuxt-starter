@@ -122,8 +122,7 @@
 export default {
   name: 'Drawer',
   data () {
-    return {
-    }
+    return {}
   },
 
   computed: {
